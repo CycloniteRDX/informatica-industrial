@@ -20,3 +20,7 @@ try:
     resistencias.calc_resis(100,-2)
 except ValueError as ve:
     print("ERROR: ",str(ve))
+
+
+from materiales import resistencias # ojo,es posible que tengamos que comentar los imports previos
+print(resistencias.calc_resis(100,2))
