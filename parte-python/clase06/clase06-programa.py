@@ -14,10 +14,10 @@ print(resistencias.limite, limite)
 
 #medidas[0]=12341346457
 medidas = [1,2]
-print(medidas,resistencias.medidas)
+print(medidas, resistencias.medidas)
 
 try:
-    resistencias.calc_resis(100,-2)
+    resistencias.calc_resis(100, -2)
 except ValueError as ve:
     print("ERROR: ",str(ve))
 
@@ -25,5 +25,5 @@ except ValueError as ve:
 #from materiales import resistencias # ojo,es posible que tengamos que comentar los imports previos
 #print(resistencias.calc_resis(100,2))
 
-from materiales.resistencias import calc_resis # si solo queremos importar un metodo de un solo módulo de un paquete se hace así
+from materiales.resis import calc_resis # si solo queremos importar un metodo de un solo módulo de un paquete se hace así
 print(calc_resis(100,-2))
