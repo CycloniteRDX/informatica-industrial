@@ -47,7 +47,8 @@ class Robot:
     def cuantos():
         return Robot.__contador
 
-
+    def __eq__(self,other): #sobrecarga de operadores
+        return self.nombre == other.nombre
 
 
 rb1 = Robot("Rb1",5,5)
@@ -74,4 +75,6 @@ print(rb2.nivel_bateria)
 
 print("Tengo {tantos} robots".format(tantos=Robot.cuantos()))
 
-
+rb3=Robot("Rb3",5,5)
+rb4=Robot("Rb3",5,5)
+print(rb3 == rb4) # en este caso python no sabe que comparar. Sería el equivalente a hacer rb3 is rb4
