@@ -11,11 +11,14 @@ print(Robot1 is Robot2)
 # no podemos crear robots como varibales importándolos
 
 class Robot:
+    __contador = 0 # atributo privado estático. Pueden usarlo todas las instancias de la clase, es decir, todos los objetos de esa clase.
+
     def __init__(self,nombre,x,y,bateria=100):
         self.nombre = nombre # sin __ sería un atributo público
         self.__x = x
         self.__y = y
         self.__bateria = bateria
+        Robot.__contador += 1
     #metodos
     def mover(self,dx,dy):
         self.__x = self.__x + dx
@@ -40,6 +43,12 @@ class Robot:
         else:
             self.__bateria = nuevo_valor
 
+    @staticmethod # no tienen porque trabajar solo con atributos estáticos
+    def cuantos():
+        return Robot.__contador
+
+
+
 
 rb1 = Robot("Rb1",5,5)
 rb2 = Robot("Rb2",0,0)
@@ -62,3 +71,7 @@ print(rb2.get_x())
 #clase 07
 rb2.nivel_bateria=1234 ### rb2.set_bateria(1324) # usando propiedad | usando setter
 print(rb2.nivel_bateria)
+
+print("Tengo {tantos} robots".format(tantos=Robot.cuantos()))
+
+
