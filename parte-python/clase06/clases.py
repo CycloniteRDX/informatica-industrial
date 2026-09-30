@@ -43,3 +43,6 @@ rb2.x = -12341 # el atributo no debe ser público, debemos poner __ en los atrib
 print(rb2.x)
 
 print(rb2.get_x())
+
+rb2._Robot__x=666
+print(rb2.get_x())
