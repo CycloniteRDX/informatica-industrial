@@ -12,7 +12,7 @@ print(Robot1 is Robot2)
 
 class Robot:
     def __init__(self,nombre,x,y,bateria=100):
-        self.__nombre = nombre
+        self.nombre = nombre # sin __ sería un atributo público
         self.__x = x
         self.__y = y
         self.__bateria = bateria
@@ -27,6 +27,18 @@ class Robot:
     def set_x(self,nueva_x):
         if nueva_x < 1000 and nueva_x > -1000:
             self.__x = nueva_x
+    #clase 07
+    # diff entre property e getter?
+    @property # equivalente getter?
+    def nivel_bateria(self):
+        return self.__bateria
+
+    @nivel_bateria.setter # equivalente setter?
+    def nivel_bateria(self,nuevo_valor):
+        if nuevo_valor > 100:
+            self.__bateria = 100
+        else:
+            self.__bateria = nuevo_valor
 
 
 rb1 = Robot("Rb1",5,5)
@@ -46,3 +58,7 @@ print(rb2.get_x())
 
 rb2._Robot__x=666
 print(rb2.get_x())
+
+#clase 07
+rb2.nivel_bateria=1234 ### rb2.set_bateria(1324) # usando propiedad | usando setter
+print(rb2.nivel_bateria)
