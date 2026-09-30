@@ -50,6 +50,9 @@ class Robot:
     def __eq__(self,other): #sobrecarga de operadores
         return self.nombre == other.nombre
 
+    def trabajar(self):
+        pass
+
 
 rb1 = Robot("Rb1",5,5)
 rb2 = Robot("Rb2",0,0)
@@ -78,3 +81,31 @@ print("Tengo {tantos} robots".format(tantos=Robot.cuantos()))
 rb3=Robot("Rb3",5,5)
 rb4=Robot("Rb3",5,5)
 print(rb3 == rb4) # en este caso python no sabe que comparar. Sería el equivalente a hacer rb3 is rb4
+
+class RobotPintura(Robot):
+    def __init__(self,nombre,x,y,color,bateria=100): # batería de última porque tiene un valor por defecto
+        # más utilizada/recomendada
+        super().__init__(nombre,x,y,bateria)
+        #otra forma
+        #Robot.__init__() # menos recomendada por si en un futuro cambiamos el nombre de la clase de la que hereda
+        self.color = color # sin __ sería un atributo público
+
+    def trabajar(self): # sobrecargamos el método trabajar
+        print("Estoy pintando con el color: ",self.color)
+
+
+class RobotSoldador(Robot):
+    def __init__(self, nombre, x, y, potencia, bateria=100):
+        super().__init__(nombre, x, y, bateria)
+        self.potencia = potencia
+
+    def trabajar(self):  # sobrecargamos el método trabajar
+        print("Estoy soldando a {} potencia: ".format(self.potencia))
+
+rb5 = RobotPintura("Rb5",5,5,"red")
+rb6 = RobotSoldador("Rb6",5,5,1000)
+
+#print(rb6.color) # rompe
+print(rb6.potencia)
+
+print(rb6.mover(100,100)) # devuelve none
