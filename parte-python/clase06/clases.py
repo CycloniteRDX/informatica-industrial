@@ -109,3 +109,26 @@ rb6 = RobotSoldador("Rb6",5,5,1000)
 print(rb6.potencia)
 
 print(rb6.mover(100,100)) # devuelve none
+
+#clase08
+
+rb7 = Robot("Rb7",20,20)
+listaRobots = [rb5,rb6,rb7]
+
+for robot in listaRobots:
+    robot.trabajar()
+
+#alternativa sin polimorfismo (preguntando tipo)
+for robot
+    #incompleto
+
+
+
+class Operario:
+    def __init__(self,nombre):
+        self.nombre = nombre
+    def trabajar(self):
+        print("Estoy trabajando manualmente")
+
+listaRobots.append(Operario("Rb1"))
+#incompleto
