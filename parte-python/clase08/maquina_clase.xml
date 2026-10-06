@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<maquinas>
+    <maquina>
+        <id>A1</id>
+        <estado>libre</estado>
+    </maquina>
+    <maquina>
+        <id>B2</id>
+        <estado>ocupada</estado>
+    </maquina>
+</maquinas>
